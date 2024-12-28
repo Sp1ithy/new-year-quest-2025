@@ -5,10 +5,54 @@
 </head>
 <body>
 <div>
-    <h1>
-        Новогодний Тест
-    </h1>
-    <h2>Арина разгадай квест чтобы получить все подарки!</h2>
+    <h1> ТЕСТ !</h1>
+    <!--    <h1>-->
+    <!--        Новогодний Тест-->
+    <!--    </h1>-->
+    <!--    <h2>Арина разгадай квест чтобы получить все подарки!</h2>-->
 </div>
+<script>
+    var testNumber
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log("asdasd")
+        alert("aaaaaaaa")
+        const queryString = window.location.search;
+        console.log(queryString);
+        const urlParams = new URLSearchParams(queryString);
+        testNumber = urlParams.get("test");
+        console.log(testNumber)
+        console.log('Документ загружен и готов к работе!');
+        switchTest(testNumber);
+    });
+
+
+    function test1 () {
+        alert("test 1")
+    }
+
+    function test2 () {
+        alert("test 2")
+    }
+
+    function test3() {
+        alert("test 3")
+    }
+
+    function switchTest (number) {
+        switch (number) {
+            case '1':
+                test1();
+                break;
+            case '2':
+                test2();
+                break;
+            case '3':
+                test3();
+                break;
+        }
+    }
+
+
+</script>
 </body>
 </html>
