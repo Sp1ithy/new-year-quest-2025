@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i');
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes');
+
+
+
+.title-box{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.title-box h2 {
+    font-size: 40px;
+    font-family: 'Great Vibes', cursive;
+    color: #e91327;
+    font-weight: 400;
+    padding: 0;
+}
+.title-box h2 span{
+    color: #70c6eb;
+    text-decoration: underline;
+}
