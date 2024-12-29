@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en"><!-- Basic -->
+<html lang="en">
+<!-- Basic -->
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,8 +16,8 @@
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="#" type="image/x-icon"/>
-    <link rel="apple-touch-icon" href="#"/>
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="#" />
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -34,268 +36,386 @@
     <![endif]-->
 
 </head>
+
 <body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
 
-<!-- LOADER -->
-<div id="preloader">
-    <div class="loader">
-        <div class="box"></div>
-        <div class="box"></div>
-    </div>
-</div><!-- end loader -->
-<!-- END LOADER -->
-
-<!-- Start header -->
-<header class="top-header">
-    <nav class="navbar header-nav navbar-expand-lg">
-        <div class="container justify-content-center">
-            <div class="navbar-brand text-center" href="index.html">
-                🎄 Новогодний Квест ! 🎄
-            </div>
+    <!-- LOADER -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="box"></div>
+            <div class="box"></div>
         </div>
-    </nav>
-</header>
-<!-- End header -->
+    </div><!-- end loader -->
+    <!-- END LOADER -->
 
-<!-- wish -->
-<div id="question-div" style="padding-bottom: 0;" class="d-inline">
-    <div class="about-a1">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="title-box">
-                        <h2>Квест для Арины!</h2>
+    <!-- Start header -->
+    <header class="top-header">
+        <nav class="navbar header-nav navbar-expand-lg">
+            <div class="container justify-content-center">
+                <div class="navbar-brand text-center" href="index.html">
+                    🎄 Новогодний Квест ! 🎄
+                    <div id="progress-bar" class="progress d-none">
+                        <div id="progress-bar-value" class="progress-bar progress-bar-striped progress-bar-animated bg-success"
+                            role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
+                            style="width: 75%"></div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div id="question-1" class="question">
-                    <div class="col-lg-12 col-md-12 col-sm-12">
-                        <div class="row align-items-center about-main-info">
 
-                            <div class="col-lg-6 col-md-6 col-sm-12 text_align_center">
-                                <p>Для того чтобы найти все подарки тебе надо будет расгадать <b>3</b> загадки</p>
-                                <button id="btn-start" class="btn btn-danger">Начать !</button>
-                            </div>
+        </nav>
+    </header>
+    <!-- End header -->
 
-                            <div class="col-lg-6 col-md-6 col-sm-12 text_align_center"
-                                 style="margin-top: 1.5rem!important">
-                                <div class="full">
-                                    <img class="img-responsive" src="images/w1.png" alt="#"/>
+    <!-- wish -->
+    <div id="question-div" style="padding-bottom: 0;" class="d-inline">
+        <div class="about-a1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="title-box">
+                            <h2>Квест для Арины!</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="question-1" class="question">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="row align-items-center about-main-info">
+
+                                <div class="col-lg-6 col-md-6 col-sm-12 text_align_center">
+                                    <p>Для того чтобы найти все подарки тебе надо будет расгадать <b>3</b> загадки</p>
+                                    <button id="btn-start" class="btn btn-danger">Начать !</button>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-sm-12 text_align_center"
+                                    style="margin-top: 1.5rem!important">
+                                    <div class="full">
+                                        <img class="img-responsive" src="images/w1.png" alt="#" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div id="question-sub-1" class="question">
-                    <div class="col-lg-12 col-md-12 col-sm-12">
-                        <div class="row align-items-center about-main-info">
+                    <div id="question-sub-1" class="question d-none">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="row align-items-center about-main-info">
 
-                            <div class="col-lg-6 col-md-6 col-sm-12 text_align_center">
-                                <p>Летели галки, сели на палки.
-                                    Сядут по одной — галка лишняя,
-                                    Сядут по две — палка лишняя.
-                                    Сколько было палок и сколько было галок?
-                                </p>
-                                3 палки , 4 галки
-                            </div>
-
-                            <div class="card-body">
-                                <div class="input-group input-group-sm mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text" id="inputGroup-sizing-sm1-1">ПАЛКИ :</span>
-                                    </div>
-                                    <input id="answer-1-1" type="text" class="form-control" aria-label="Small"
-                                           aria-describedby="inputGroup-sizing-sm1-1">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text" id="inputGroup-sizing-sm1-2">ГАЛКИ :</span>
-                                    </div>
-                                    <input id="answer-1-2" type="text" class="form-control" aria-label="Small"
-                                           aria-describedby="inputGroup-sizing-sm1-2">
+                                <div class="col-lg-6 col-md-6 col-sm-12 text_align_center">
+                                    <p>Летели галки, сели на палки.
+                                        Сядут по одной — галка лишняя,
+                                        Сядут по две — палка лишняя.
+                                        Сколько было палок и сколько было галок?
+                                    </p>
+                                    <!-- 3 палки , 4 галки -->
                                 </div>
 
-                                <button id="btnCheckAnswer1" href="#" class="btn btn-success">Проверить!</button>
-                            </div>
-
-                            <div class="col-lg-6 col-md-6 col-sm-12 text_align_center"
-                                 style="margin-top: 1.5rem!important">
-                                <div class="full">
-                                    <img class="img-responsive" src="images/w1.png" alt="#"/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="question-2" class="question">
-                    <div class="col-lg-12 col-md-12 col-sm-12">
-                        <div class="row align-items-center about-main-info">
-                            <div class="col-lg-6 col-md-6 col-sm-12 text_align_center">
-                                <p>Разгадай Ребус</p>
-                                <div class="card">
-                                    <img src="images/rebus.jpg" class="card-img-top" alt="...">
-                                    <i> <b>|</b> - количество букв которые надо убрать из слова </i>
-                                    <div class="card-body">
-                                        <div class="input-group input-group-sm mb-3">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text" id="inputGroup-sizing-sm">Ответ :</span>
-                                            </div>
-                                            <input id="answer-2" type="text" class="form-control" aria-label="Small"
-                                                   aria-describedby="inputGroup-sizing-sm">
+                                <div class="card-body">
+                                    <div class="input-group input-group-sm mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="inputGroup-sizing-sm1-1">ПАЛКИ :</span>
                                         </div>
+                                        <input id="answer-1-1" type="text" class="form-control" aria-label="Small"
+                                            aria-describedby="inputGroup-sizing-sm1-1">
+                                    </div>
+                                    <div class="input-group input-group-sm mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="inputGroup-sizing-sm1-2">ГАЛКИ :</span>
+                                        </div>
+                                        <input id="answer-1-2" type="text" class="form-control" aria-label="Small"
+                                            aria-describedby="inputGroup-sizing-sm1-2">
+                                    </div>
 
-                                        <button id="btnCheckAnswer2" href="#" class="btn btn-success">Проверить!</button>
+                                    <button id="btnCheckAnswer1" href="#" class="btn btn-success">Проверить!</button>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-sm-12 text_align_center"
+                                    style="margin-top: 1.5rem!important">
+                                    <div class="full">
+                                        <img class="img-responsive" src="images/w1.png" alt="#" />
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div id="question-3" class="question">
-                    <div class="col-lg-12 col-md-12 col-sm-12">
-                        <div class="row align-items-center">
-                            <iframe width="500" height="500" style="border:3px solid black; margin:auto; display:block"
-                                    frameborder="0" src="https://crosswordlabs.com/embed/2024-12-28-156"></iframe>
+                    <div id="question-2" class="question d-none">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="row align-items-center about-main-info">
+                                <div class="col-lg-6 col-md-6 col-sm-12 text_align_center">
+                                    <p>Разгадай Ребус</p>
+                                    <div class="card">
+                                        <img src="images/rebus.jpg" class="card-img-top" alt="...">
+                                        <i> <b>|</b> - количество букв которые надо убрать из слова </i>
+                                        <div class="card-body">
+                                            <div class="input-group input-group-sm mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="inputGroup-sizing-sm">Ответ
+                                                        :</span>
+                                                </div>
+                                                <input id="answer-2" type="text" class="form-control" aria-label="Small"
+                                                    aria-describedby="inputGroup-sizing-sm">
+                                            </div>
+
+                                            <button id="btnCheckAnswer2" href="#"
+                                                class="btn btn-success">Проверить!</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="question-3" class="question d-none col-12">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="align-items-center text-center">
+
+                                <div class="form-group">
+                                    <label>Картинка, фраза или видео, которые быстро становятся вирусными и отражают
+                                        текущие тренды или юмор интернета.</label>
+                                    <input type="text" class="form-control crossword-input" placeholder="Ответ"
+                                        data-answer="Мем">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Это слово, используемое для обозначения привлекательной девушки или парня,
+                                        которые вам симпатичны.</label>
+                                    <input type="text" class="form-control crossword-input" placeholder="Ответ"
+                                        data-answer="Краш">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Место, где люди делятся своими фотками и видео.</label>
+                                    <input type="text" class="form-control crossword-input" placeholder="Ответ"
+                                        data-answer="Инстаграм">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Культура создания автопортретов, ставшая важной частью соцсетей и личной
+                                        самопрезентации.</label>
+                                    <input type="text" class="form-control crossword-input" placeholder="Ответ"
+                                        data-answer="Селфи">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Сленговое выражение обозначает людей с лишним весом
+                                        <input type="text" class="form-control crossword-input" placeholder="Ответ"
+                                            data-answer="Босс Кфс">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Очень популярное приложение, где создаются короткие видеоролики, и которое
+                                        является главным трендом у подростков.</label>
+                                    <input type="text" class="form-control crossword-input" placeholder="Ответ"
+                                        data-answer="ТикТок">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Нечто странное, вызывающее чувство недоумения, неловкости, стыда, так
+                                        называемый «испанский стыд».</label>
+                                    <input type="text" class="form-control crossword-input" placeholder="Ответ"
+                                        data-answer="Кринж">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Неопрятный мужчина средних лет, зачастую с пивным животом и отсутствием
+                                        какого-либо стиля, который придерживается консервативных взглядов.</label>
+                                    <input type="text" class="form-control crossword-input" placeholder="Ответ"
+                                        data-answer="Скуф">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Девушка мужчины из предыдушего вопроса</label>
+                                    <input type="text" class="form-control crossword-input" placeholder="Ответ"
+                                        data-answer="Альтушка">
+                                </div>
+
+                                <button id="btnCheckAnswer3" class="btn btn-primary text-center">Проверить !</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
 
-            <div id="modal" class="modal" tabindex="-1" role="dialog">
-                <div class="modal-dialog" role="document">
-                    <div id="modal-content" class="modal-content text-white">
-                        <div class="modal-header">
-                            <h5 id="modal-title" class="modal-title text-white">Modal title</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div id="modal-body" class="modal-body">
-                            <p id="modal-prompt">Modal body text goes here.</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <div id="modal" class="modal fade" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div id="modal-content" class="modal-content text-white">
+                            <div class="modal-header">
+                                <h5 id="modal-title" class="modal-title text-white">Modal title</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div id="modal-body" class="modal-body">
+                                <p id="modal-prompt">Modal body text goes here.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 
-</div>
+    <!-- wish us -->
+    <!-- ALL JS FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.pogo-slider.min.js"></script>
 
-<!-- wish us -->
-<!-- ALL JS FILES -->
-<script src="js/jquery.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<!-- ALL PLUGINS -->
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/jquery.pogo-slider.min.js"></script>
+    <script src="js/images-loded.min.js"></script>
+    <script src="js/custom.js"></script>
 
-<script src="js/images-loded.min.js"></script>
-<script src="js/custom.js"></script>
+    <script>
 
-<script>
+        var testNumber
+        document.addEventListener('DOMContentLoaded', function () {
 
-    var testNumber
-    document.addEventListener('DOMContentLoaded', function () {
+            $('#btn-start').on('click', function (e) {
+                showQuestion("question-sub-1")
+            });
+            $('#btnCheckAnswer1').on('click', function (e) {
+                checkAnswer1()
+            });
+            $('#btnCheckAnswer2').on('click', function (e) {
+                checkAnswer2()
+            });
+            $('#btnCheckAnswer3').on('click', function (e) {
+                checkAnswer3()
+            });
 
-        $('#btn-start').on('click', function (e) {
-            showQuestion("question-sub-1")
+            const queryString = window.location.search;
+            console.log(queryString);
+            const urlParams = new URLSearchParams(queryString);
+            testNumber = urlParams.get("test");
+            console.log(testNumber)
+            console.log('Документ загружен и готов к работе!');
+            switchTest(testNumber);
         });
-        $('#btnCheckAnswer1').on('click', function (e) {
-            checkAnswer1()
-        });
-        $('#btnCheckAnswer2').on('click', function (e) {
-            checkAnswer2()
-        });
-
-        const queryString = window.location.search;
-        console.log(queryString);
-        const urlParams = new URLSearchParams(queryString);
-        testNumber = urlParams.get("test");
-        console.log(testNumber)
-        console.log('Документ загружен и готов к работе!');
-        switchTest(testNumber);
-    });
 
 
-    function test1() {
-        showQuestion('question-1')
-    }
-
-    function test2() {
-        showQuestion('question-2')
-    }
-
-    function test3() {
-        showQuestion('question-3')
-    }
-
-    function checkAnswer1(){
-        let isCorrect = $('#answer-1-1').val() === '3'
-            && $('#answer-1-2').val() === '4'
-        if (isCorrect) {
-            showAlert(true, "Подсказка к 2 подарку")
-        }else{
-            showAlert(false, "Подумай еще раз 😉")
+        function test1() {
+            showQuestion('question-1')
         }
-    }
 
-    function checkAnswer2() {
-        let isCorrect = $("#answer-2").val().toUpperCase() === "ГИРЛЯНДА";
-        if (isCorrect) {
-            showAlert(true, "Подсказка к 3 подарку")
-        }else{
-            showAlert(false, "Подумай еще раз 😉")
+        function test2() {
+            showQuestion('question-2')
         }
-    }
 
-    function showAlert(isCorrect, prompt) {
-        let title = isCorrect ? `🎉 Правильный ответ ! 🎉` : `😟 Не правильный ответ 😟`;
-        $('#modal-title').html(title)
-        if (isCorrect) {
-            $('#modal-content').addClass('bg-success')
-            $('#modal-content').removeClass('bg-danger')
-        } else {
-            $('#modal-content').addClass('bg-danger')
-            $('#modal-content').removeClass('bg-success')
+        function test3() {
+            showQuestion('question-3')
+            let questionNumber = $('.crossword-input').length
+            setProgressBar(true, 0, questionNumber)
+
+            $('.crossword-input').focusout(function (index) {
+                let answer = $(this).attr('data-answer')
+                let value = $(this).val()
+
+                let isCorrect = answer.replace(/\s+/g, "").toUpperCase() === value.replace(/\s+/g, "").toUpperCase();
+
+                if (isCorrect) {
+                    $(this).removeClass('is-invalid')
+                    $(this).addClass('is-valid')
+                } else {
+                    $(this).addClass('is-invalid')
+                    $(this).removeClass('is-valid')
+                }
+
+                setProgressBar(true, $('.is-valid').length, questionNumber)
+            })
+
         }
-        $('#modal-prompt').html(prompt)
-        $('#modal').modal('show')
-    }
 
-    function showQuestion(questionId) {
-        $('.question').removeClass('d-inline')
-        $('.question').addClass('d-none')
-        $(`#${questionId}`).removeClass('d-none')
-        $(`#${questionId}`).addClass('d-inline')
-
-    }
-
-    function switchTest(number) {
-        switch (number) {
-            case '1':
-                test1();
-                break;
-            case '2':
-                test2();
-                break;
-            case '3':
-                test3();
-                break;
+        function checkAnswer1() {
+            let isCorrect = $('#answer-1-1').val() === '3'
+                && $('#answer-1-2').val() === '4'
+            if (isCorrect) {
+                showAlert(true, "Подсказка к 2 подарку")
+            } else {
+                showAlert(false, "Подумай еще раз 😉")
+            }
         }
-    }
 
-    function btnListeners() {
+        function checkAnswer2() {
+            let isCorrect = $("#answer-2").val().toUpperCase() === "ГИРЛЯНДА";
+            if (isCorrect) {
+                showAlert(true, "Подсказка к 3 подарку")
+            } else {
+                showAlert(false, "Подумай еще раз 😉")
+            }
+        }
 
-    }
+        function checkAnswer3() {
+            let questions = $('.crossword-input').length
+            let correctAnswers = $('.is-valid').length
+            
+            let isCorrect = questions === correctAnswers
+            if(isCorrect){
+                showAlert(true, "УРА ТЫ ВЫЙГРАЛА")
+            }else{
+                showAlert(false, "Ты ответила не на все вопросы 🤔")
 
+            }
+        }
 
-</script>
+        function showAlert(isCorrect, prompt) {
+            let title = isCorrect ? `🎉 Правильный ответ ! 🎉` : `😟 Не правильный ответ 😟`;
+            $('#modal-title').html(title)
+            if (isCorrect) {
+                $('#modal-content').addClass('bg-success')
+                $('#modal-content').removeClass('bg-danger')
+            } else {
+                $('#modal-content').addClass('bg-danger')
+                $('#modal-content').removeClass('bg-success')
+            }
+            $('#modal-prompt').html(prompt)
+            $('#modal').modal('show')
+        }
+
+        function showQuestion(questionId) {
+            $('.question').removeClass('d-inline')
+            $('.question').addClass('d-none')
+            $(`#${questionId}`).removeClass('d-none')
+            $(`#${questionId}`).addClass('d-inline')
+
+        }
+
+        function setProgressBar(isVisible, currentValue, maxValue){
+            $('#progress-bar').removeClass(isVisible ? 'd-none' : 'd-flex')
+            $('#progress-bar').addClass(isVisible ? 'd-flex' : 'd-none')
+
+            $('#progress-bar-value').attr('aria-valuenow', currentValue)
+            $('#progress-bar-value').attr('aria-valuemax', maxValue)
+
+            let proc = 0
+            if(currentValue > 0){
+                proc = (currentValue / maxValue) * 100
+            }
+            console.log(`currentValue =${currentValue}, maxValue=${maxValue}, proc = ${proc}`)
+
+            $('#progress-bar-value').css('width', `${proc}%`)
+        }
+
+        function switchTest(number) {
+            switch (number) {
+                case '1':
+                    test1();
+                    break;
+                case '2':
+                    test2();
+                    break;
+                case '3':
+                    test3();
+                    break;
+            }
+        }
+    </script>
 </body>
+
 </html>
