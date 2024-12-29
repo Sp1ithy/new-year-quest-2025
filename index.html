@@ -55,7 +55,8 @@
                 <div class="navbar-brand text-center" href="index.html">
                     🎄 Новогодний Квест ! 🎄
                     <div id="progress-bar" class="progress d-none">
-                        <div id="progress-bar-value" class="progress-bar progress-bar-striped progress-bar-animated bg-success"
+                        <div id="progress-bar-value"
+                            class="progress-bar progress-bar-striped progress-bar-animated bg-success"
                             role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
                             style="width: 75%"></div>
                     </div>
@@ -83,7 +84,9 @@
                             <div class="row align-items-center about-main-info">
 
                                 <div class="col-lg-6 col-md-6 col-sm-12 text_align_center">
-                                    <p>Для того чтобы найти все подарки тебе надо будет расгадать <b>3</b> загадки</p>
+                                    <span>Для того чтобы найти все подарки тебе надо будет разгадать <b>3</b>
+                                        загадки</span>
+                                    <br>
                                     <button id="btn-start" class="btn btn-danger">Начать !</button>
                                 </div>
 
@@ -161,6 +164,12 @@
                                                 class="btn btn-success">Проверить!</button>
                                         </div>
                                     </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12 text_align_center"
+                                        style="margin-top: 1.5rem!important">
+                                        <div class="">
+                                            <img style="max-width: 70%; height: auto;" src="images/w2.png" alt="#" />
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -169,7 +178,7 @@
                     <div id="question-3" class="question d-none col-12">
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <div class="align-items-center text-center">
-
+                                <h3 class="text-primary">Вкиторина !</h3>
                                 <div class="form-group">
                                     <label>Картинка, фраза или видео, которые быстро становятся вирусными и отражают
                                         текущие тренды или юмор интернета.</label>
@@ -234,6 +243,57 @@
                             </div>
                         </div>
                     </div>
+
+                    <div id="question-4" class="question d-none">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="row align-items-center about-main-info">
+                                <div class="col-lg-6 col-md-6 col-sm-12 text_align_center">
+                                    <p>Чтобы найти 🔑 нужно ввести ПАРОЛЬ</p>
+                                    <div class="container pb-3">
+                                        <ul class="list-group text-left">
+                                            <li class="list-group-item">1. Сколько было Галок ?</li>
+                                            <li class="list-group-item">2. Сколько было палок ?</li>
+                                            <li class="list-group-item">3. Сколько букв надо было пропустить в ребусе ?
+                                            </li>
+                                            <li class="list-group-item">4. Сколько было вопросов в Вкиторине ?</li>
+                                        </ul>
+                                    </div>
+                                    <div class="container height-100 d-flex justify-content-center align-items-center">
+                                        <div class="position-relative">
+                                            <div class="card p-2 text-center">
+                                                <div>
+                                                    <span>КОД 🔐</span>
+                                                </div>
+
+                                                <div id="otp"
+                                                    class="inputs d-flex flex-row justify-content-center mt-2">
+                                                    <input class="m-2 text-center form-control rounded otp-digit"
+                                                        data-answer="4" type="text" maxlength="1" />
+                                                    <input class="m-2 text-center form-control rounded otp-digit"
+                                                        data-answer="3" type="text" maxlength="1" />
+                                                    <input class="m-2 text-center form-control rounded otp-digit"
+                                                        data-answer="8" type="text" maxlength="1" />
+                                                    <input class="m-2 text-center form-control rounded otp-digit"
+                                                        data-answer="9" type="text" maxlength="1" />
+                                                </div>
+                                                <div class="mt-4">
+                                                    <button id="btnCheckAnswer4"
+                                                        class="btn btn-outline-success px-4 validate">Подтвердить</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12 text_align_center"
+                                        style="margin-top: 1.5rem!important">
+                                        <div class="">
+                                            <img style="max-width: 70%; height: auto;" src="images/gb.png" alt="#" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
 
@@ -274,6 +334,11 @@
 
     <script>
 
+        const prompt1 = "В самой <u>большой</u> комнате , найди <u>галку</u>!"
+        const prompt2 = "В комнате с <u>гирляндой</u> 🎇"
+        const prompt3 = "Найди на карте ❌";
+        const prompt4 = "Вот где искать 👀";
+
         var testNumber
         document.addEventListener('DOMContentLoaded', function () {
 
@@ -288,6 +353,9 @@
             });
             $('#btnCheckAnswer3').on('click', function (e) {
                 checkAnswer3()
+            });
+            $('#btnCheckAnswer4').on('click', function (e) {
+                checkAnswer4()
             });
 
             const queryString = window.location.search;
@@ -314,29 +382,21 @@
             setProgressBar(true, 0, questionNumber)
 
             $('.crossword-input').focusout(function (index) {
-                let answer = $(this).attr('data-answer')
-                let value = $(this).val()
-
-                let isCorrect = answer.replace(/\s+/g, "").toUpperCase() === value.replace(/\s+/g, "").toUpperCase();
-
-                if (isCorrect) {
-                    $(this).removeClass('is-invalid')
-                    $(this).addClass('is-valid')
-                } else {
-                    $(this).addClass('is-invalid')
-                    $(this).removeClass('is-valid')
-                }
-
+                validateDataInput(this)
                 setProgressBar(true, $('.is-valid').length, questionNumber)
             })
 
+        }
+
+        function test4() {
+            showQuestion('question-4')
         }
 
         function checkAnswer1() {
             let isCorrect = $('#answer-1-1').val() === '3'
                 && $('#answer-1-2').val() === '4'
             if (isCorrect) {
-                showAlert(true, "Подсказка к 2 подарку")
+                showAlert(true, prompt1)
             } else {
                 showAlert(false, "Подумай еще раз 😉")
             }
@@ -345,7 +405,7 @@
         function checkAnswer2() {
             let isCorrect = $("#answer-2").val().toUpperCase() === "ГИРЛЯНДА";
             if (isCorrect) {
-                showAlert(true, "Подсказка к 3 подарку")
+                showAlert(true, prompt2)
             } else {
                 showAlert(false, "Подумай еще раз 😉")
             }
@@ -354,17 +414,51 @@
         function checkAnswer3() {
             let questions = $('.crossword-input').length
             let correctAnswers = $('.is-valid').length
-            
-            let isCorrect = questions === correctAnswers
-            if(isCorrect){
-                showAlert(true, "УРА ТЫ ВЫЙГРАЛА")
-            }else{
-                showAlert(false, "Ты ответила не на все вопросы 🤔")
 
+            let isCorrect = questions === correctAnswers
+            if (isCorrect) {
+                showAlert(true,  prompt3, "map.png")
+            } else {
+                showAlert(false, "Ты ответила не на все вопросы 🤔")
             }
         }
 
-        function showAlert(isCorrect, prompt) {
+        function checkAnswer4(){
+            var isValid = true;
+            $('.otp-digit').each(function (i){
+                if(!validateDataInput(this, false)){
+                    isValid = false
+                }
+            })
+
+            if(isValid){
+                showAlert(true, prompt4, "key-ball.jpg")
+            }else{
+                showAlert(false, "Не правильный пароль 👀")
+            }
+        }
+
+        function validateDataInput(element, addStyle = true) {
+
+            let answer = $(element).attr('data-answer')
+            let value = $(element).val()
+
+            let isCorrect = answer.replace(/\s+/g, "").toUpperCase() === value.replace(/\s+/g, "").toUpperCase();
+
+            if(addStyle){
+                if (isCorrect) {
+                    $(element).removeClass('is-invalid')
+                    $(element).addClass('is-valid')
+                } else {
+                    $(element).addClass('is-invalid')
+                    $(element).removeClass('is-valid')
+                }
+            }
+
+            return isCorrect;
+        }
+
+        function showAlert(isCorrect, prompt, image = null) {
             let title = isCorrect ? `🎉 Правильный ответ ! 🎉` : `😟 Не правильный ответ 😟`;
             $('#modal-title').html(title)
             if (isCorrect) {
@@ -374,7 +468,14 @@
                 $('#modal-content').addClass('bg-danger')
                 $('#modal-content').removeClass('bg-success')
             }
-            $('#modal-prompt').html(prompt)
+            if(image!= null){
+                $('#modal-prompt').html(`
+                <p>${prompt}</p>
+                <img style="max-width: 100%; height: auto;" src="images/${image}" alt="#" />
+                `)
+            }else{
+                $('#modal-prompt').html(prompt)
+            }
             $('#modal').modal('show')
         }
 
@@ -386,7 +487,7 @@
 
         }
 
-        function setProgressBar(isVisible, currentValue, maxValue){
+        function setProgressBar(isVisible, currentValue, maxValue) {
             $('#progress-bar').removeClass(isVisible ? 'd-none' : 'd-flex')
             $('#progress-bar').addClass(isVisible ? 'd-flex' : 'd-none')
 
@@ -394,7 +495,7 @@
             $('#progress-bar-value').attr('aria-valuemax', maxValue)
 
             let proc = 0
-            if(currentValue > 0){
+            if (currentValue > 0) {
                 proc = (currentValue / maxValue) * 100
             }
             console.log(`currentValue =${currentValue}, maxValue=${maxValue}, proc = ${proc}`)
@@ -412,6 +513,9 @@
                     break;
                 case '3':
                     test3();
+                    break;
+                case '4':
+                    test4();
                     break;
             }
         }
